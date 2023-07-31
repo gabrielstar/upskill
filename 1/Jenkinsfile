@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("Run script") {
+            steps {
+                sh "chmod +x 1/tests/dumy_test.py"
+                sh "python3 1/tests/dumy_test.py"
+            }
+        }
+    }
+}
+
