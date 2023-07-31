@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    stages{
+        stage("Run script") {
+            steps {
+                sh "./tests/dumy_test.py"
+            }
+        }
+    }
+}
+
