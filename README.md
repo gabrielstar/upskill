@@ -8,6 +8,3 @@
 ## 2 - pytest jobs testing
 1. manually run jobs from your local pycharm
 2. triggering the job from Jenkins localhost for now
-
-
-
