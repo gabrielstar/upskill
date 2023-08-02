@@ -1,4 +1,4 @@
-venv:
+.PHONY venv:
 	python3 -m venv venv
 	./venv/bin/python3 -m pip install --upgrade pip
 
@@ -10,3 +10,10 @@ setup: venv
 run_test: setup
 	./venv/bin/python3 ./tests/dumy_test.py
 
+.PHONY: format
+format:
+	./venv/bin/black .
+
+.PHONY: lint
+lint:
+	./venv/bin/flake8 .

@@ -1,0 +1,15 @@
+2023/08/02 10:43:39 # 
+2023/08/02 10:43:39 # ┌────────────────┐ H2O Wave 
+2023/08/02 10:43:39 # │  ┐┌┐┐┌─┐┌ ┌┌─┐ │ 0.26.1 20230703100207
+2023/08/02 10:43:39 # │  └┘└┘└─└└─┘└── │ © 2021 H2O.ai, Inc.
+2023/08/02 10:43:39 # └────────────────┘
+2023/08/02 10:43:39 # ┌──────────────────────────────────────┐
+2023/08/02 10:43:39 # │  Running at http://localhost:10101/  │
+2023/08/02 10:43:39 # └──────────────────────────────────────┘
+panic: failed reading default index.html page: open /home/oem/Documents/h20/GIT/upskill/1_Basic_python_Jenkins_Pipeline/www/index.html: no such file or directory
+
+goroutine 1 [running]:
+github.com/h2oai/wave.Run({{0x8ed264, 0x6}, {0x8ed588, 0xe}, {0x7e1efa, 0x6}, {0x814d56, 0x1}, {0xc000138320, 0x47}, ...})
+	/home/runner/work/wave/wave/server.go:145 +0x1519
+main.main()
+	/home/runner/work/wave/wave/cmd/wave/main.go:259 +0x1418
