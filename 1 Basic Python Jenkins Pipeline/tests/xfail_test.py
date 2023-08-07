@@ -26,3 +26,4 @@ def test_less():
     num = 100
     assert num < 200
 
+'''pytest --maxfail = <num>'''
