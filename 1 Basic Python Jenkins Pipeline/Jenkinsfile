@@ -8,7 +8,7 @@ pipeline {
                 sh "python3 '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
             }
         }
-        stage("Run Test script") {
+        stage("Run Parametrized Test script") {
             steps {
                 sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
                 sh "python3 '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
