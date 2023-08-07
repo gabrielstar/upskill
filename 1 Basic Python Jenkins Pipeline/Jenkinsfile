@@ -4,8 +4,15 @@ pipeline {
     stages {
         stage("Run script") {
             steps {
-                sh "chmod +x 1/tests/dumy_test.py"
-                sh "python3 1/tests/dumy_test.py"
+                sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
+                sh "python3 '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
+            }
+        }
+        stage("Run Test script") {
+            steps {
+                sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
+                sh "python3 '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
+
             }
         }
     }
