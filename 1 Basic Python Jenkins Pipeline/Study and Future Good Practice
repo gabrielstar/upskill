@@ -19,3 +19,4 @@ Good Practice ->
     Give meaningful names to test files and methods.
     Have enough markers to group the tests based on various criteria.
     Use fixtures whenever needed.
+
