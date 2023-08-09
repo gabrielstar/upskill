@@ -5,10 +5,13 @@ pipeline {
         stage("Install requirements"){
             steps {
                 sh """
-                sudo apt-get install python3-venv -y
-                python3 -m venv venv
-                source venv/bin/activate
+
+                PYENV_HOME=$WORKSPACE/.pyenv/
+                virtualenv --no-site-packages $PYENV_HOME
+                source $PYENV_HOME/bin/activate
+                pip install -U pytest
                 pip install -r requirements.txt
+
                 """
             }
         }
