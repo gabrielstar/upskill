@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage("Install requirements"){
             steps {
-                sh "make setup"
+                sh "pip -m venv venv"
+                sh "pip install pytest"
             }
         }
         stage("Run script") {
