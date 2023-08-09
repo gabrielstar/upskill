@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage("Install requirements"){
+            steps {
+                sh "make setup"
+            }
+        }
         stage("Run script") {
             steps {
                 sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
