@@ -5,7 +5,9 @@ pipeline {
         stage("Install requirements"){
             steps {
                 sh """
-                pip install pytest
+                python -m venv venv
+                source venv/bin/activate
+                pip install -r requirements.txt
                 """
             }
         }
