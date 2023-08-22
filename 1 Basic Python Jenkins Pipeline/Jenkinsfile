@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''
                 echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
-                PYENV_HOME=$WORKSPACE/.pyenv
+                PYENV_HOME=./pyenv
                 python -m venv $PYENV_HOME
                 source $PYENV_HOME/bin/activate
                 pip3 install -U pytest
