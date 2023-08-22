@@ -9,7 +9,6 @@ pipeline {
                 echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
                 PYENV_HOME=$WORKSPACE/.pyenv
                 python -m venv $PYENV_HOME
-                sudo apk add source
                 source $PYENV_HOME/bin/activate
                 pip3 install -U pytest
                 pip3 install -r requirements.txt
