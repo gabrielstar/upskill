@@ -6,7 +6,6 @@ pipeline {
             steps {
                 sh '''
                 echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
-                pip3 install --upgrade pip
                 PYENV_HOME=./pyenv
                 python -m venv $PYENV_HOME
                 source $PYENV_HOME/bin/activate
