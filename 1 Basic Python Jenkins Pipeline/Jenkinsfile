@@ -1,5 +1,10 @@
+import groovy.transform.Field
+
+
 pipeline {
-    agent any
+    agent {
+        docker { image '3.11.4-alpine3.18'
+    }
 
     stages {
         stage("Install requirements"){
