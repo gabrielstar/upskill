@@ -3,13 +3,13 @@ pipeline {
 
     stages {
         stage("Install requirements"){
-            agent {docker {image 'python'}}
+            agent {docker {image 'python:3.5.2-alpine'}}
             steps {
                 sh '''
                 echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
                 PYENV_HOME=$WORKSPACE/.pyenv
                 python -m venv $PYENV_HOME
-                pip3 install source --user
+                apk add source
                 source $PYENV_HOME/bin/activate
                 pip3 install -U pytest
                 pip3 install -r requirements.txt
