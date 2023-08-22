@@ -1,12 +1,9 @@
-
-
 pipeline {
-    agent {
-        docker { image '3.11.4-alpine3.18'
-    }
+    agent any
 
     stages {
         stage("Install requirements"){
+            agent {docker {image '3.11.4-alpine3.18'}}
             steps {
                 sh '''
                 echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
