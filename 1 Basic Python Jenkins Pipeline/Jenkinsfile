@@ -9,7 +9,7 @@ pipeline {
                 echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
                 PYENV_HOME=$WORKSPACE/.pyenv
                 python -m venv $PYENV_HOME
-                pip3 install source
+                pip3 install source --user
                 source $PYENV_HOME/bin/activate
                 pip3 install -U pytest
                 pip3 install -r requirements.txt
