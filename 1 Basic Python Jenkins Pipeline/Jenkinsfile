@@ -16,12 +16,14 @@ pipeline {
             }
         }
         stage("Run script") {
+            agent {docker {image 'python:3.5.2-alpine'}}
             steps {
                 sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
                 sh "python3 '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
             }
         }
         stage("Run Parametrized Test script") {
+            agent {docker {image 'python:3.5.2-alpine'}}
             steps {
                 sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
                 sh "python3 '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
