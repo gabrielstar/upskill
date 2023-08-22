@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh '''
                 echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
+                pip3 install --upgrade pip
                 PYENV_HOME=./pyenv
                 python -m venv $PYENV_HOME
                 source $PYENV_HOME/bin/activate
@@ -16,12 +17,21 @@ pipeline {
         }
         stage("Run script") {
             steps {
+                sh '''
+                PYENV_HOME=./pyenv
+                source $PYENV_HOME/bin/activate
+                '''
                 sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
                 sh "python3 '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
             }
         }
         stage("Run Parametrized Test script") {
             steps {
+                sh '''
+                PYENV_HOME=./pyenv
+                source $PYENV_HOME/bin/activate
+                '''
+
                 sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
                 sh "python3 '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
 
