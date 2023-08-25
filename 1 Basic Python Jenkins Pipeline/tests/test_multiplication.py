@@ -7,3 +7,4 @@ def test_multiplication_11(num, output):
 '''
 pytest test_multiplication.py -v --junitxml="result.xml"
 '''
+
