@@ -25,3 +25,4 @@ def test_greater_equal():
 def test_less():
     num = 100
     assert num < 200
+
