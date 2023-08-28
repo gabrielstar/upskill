@@ -2,11 +2,31 @@ pipeline {
     agent any
 
     stages {
+        stage("Install requirements"){
+            steps {
+                sh '''
+                echo "EXECUTING INSTALLATION OF PYTHON PACKAGES"
+                PYENV_HOME=$WORKSPACE/.pyenv/
+                virtualenv $PYENV_HOME
+                source $PYENV_HOME/bin/activate
+                pip install -U pytest
+                pip install -r requirements.txt
+                '''
+            }
+        }
         stage("Run script") {
             steps {
-                sh "chmod +x 1/tests/dumy_test.py"
-                sh "python3 1/tests/dumy_test.py"
+                sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
+                sh "python3 '1 Basic Python Jenkins Pipeline/tests/dumy_test.py'"
+            }
+        }
+        stage("Run Parametrized Test script") {
+            steps {
+                sh "chmod +x '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
+                sh "python3 '1 Basic Python Jenkins Pipeline/tests/parametrize_tests.py'"
+
             }
         }
     }
 }
+
